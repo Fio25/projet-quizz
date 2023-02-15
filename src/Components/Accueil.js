@@ -11,9 +11,11 @@ function Accueil() {
       
       <h1>STUDY QUIZZ</h1>
 
-      <Link className="btnAccueil" to="./PageInscription">Inscription</Link>
-      <Link className="btnAccueil" to="./PageConnexion">Connexion</Link>
-      <Link className="btnAccueil" to="./Categories">Jouer en tant qu'invité</Link>
+      <div className="blockBtn">
+        <Link className="btnAccueil" to="./PageInscription">Inscription</Link>
+        <Link className="btnAccueil" to="./PageConnexion">Connexion</Link>
+        <Link className="btnAccueil" to="./Categories">Jouer en tant qu'invité</Link>
+      </div>
 
     </div>
   )
