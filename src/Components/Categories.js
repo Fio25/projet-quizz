@@ -1,20 +1,24 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import './Categories.css'
 
 function Categories() {
   return (
-  <>  <div>
-        <button>Sciences</button>
-        <button>Litérature</button>
-        <button>Géographie</button>
-        <button>Chimie</button>
+    <>
+      <div className="btn-user">
+        <Link className="iconUser" to="/ModifProfil">
+          <i className="fa-solid fa-user"></i>
+        </Link>
       </div>
-            
-      <Link className="iconUser" to="/ModifProfil"><i class="fa-solid fa-user"></i></Link>
 
-  </>
-    
-  )
+      <div className="blockBtn">
+        <button className="btn-categories">Sciences</button>
+        <button className="btn-categories">Littérature</button>
+        <button className="btn-categories">Géographie</button>
+        <button className="btn-categories">Chimie</button>
+      </div>
+    </>
+  );
 }
 
-export default Categories
+export default Categories;
