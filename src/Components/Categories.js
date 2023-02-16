@@ -11,11 +11,11 @@ function Categories() {
         </Link>
       </div>
 
-      <div className="blockBtn">
+      <div className="blockCategories">
         <button className="btn-categories">Sciences</button>
-        <button className="btn-categories">Littérature</button>
+        <button className="btn-categories">Français</button>
         <button className="btn-categories">Géographie</button>
-        <button className="btn-categories">Chimie</button>
+        <button className="btn-categories">Sport</button>
       </div>
     </>
   );
