@@ -1,80 +1,78 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './PageInscription.css'
 import {Link} from 'react-router-dom'
-// import { useRef, useState } from 'react';
 
 function PageInscription() {
 
-    // const emailRegex = /^\S+@\S+.\S+$/;
-    // const passwordRegex = /^(?=.[A-Z])(?=.[a-z])(?=.*\d).{8,}$/;
-    // const errors = {};
-    // if (!formData.name) {
-    //   errors.name = 'Veuillez entrer un pseudo.';
-    // }
-    // if (!emailRegex.test(formData.email)) {
-    //   errors.email = 'Veuillez entrer une adresse e-mail valide.';
-    // }
-    // if (!passwordRegex.test(formData.password)) {
-    //   errors.password = 'Le mot de passe doit contenir au moins 8 caractères, dont au moins une lettre et un chiffre.';
-    // }
-    // if (formData.password !== formData.confirmPassword) {
-    //   errors.confirmPassword = 'Les mots de passe ne correspondent pas.';
-    // }
-    // setFormErrors(errors);
+    const pseudoRegex = /^[a-zA-Z0-9_-]{3,20}$/
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?!.*[\W_])(?!.*\s).{8,}$/;
 
-    // // Si des erreurs sont détectées, ne pas envoyer le formulaire
-    // if (Object.keys(errors).length > 0) {
-    //   return;
-    // }
+    const [formData, setFormData] = useState({
+      pseudo:"",
+      email:"",
+      password:"",
+      confirmPassword:""
+    })
 
+    const [formErrors, setFormErrors] = useState({})
 
+    const handleSubmitChange = (event) => {
+    const {name, value} = event.target;
+      setFormData({...formData, [name]: value})
+    }
 
-    
-  // const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
-  // const [passwordsMatch, setPasswordsMatch] = useState(false);
+    //Soumission de l'entiereté du form
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      
+    const errors = {};
+    if (!pseudoRegex.test(formData.pseudo)) {
+      errors.pseudo = "Veuillez entrer un pseudo";
+    }
+    if (!emailRegex.test(formData.email)) {
+      errors.email = "Veuillez entrer une adresse e-mail valide";
+    }
+    if (!passwordRegex.test(formData.password)) {
+      errors.password = "Au moins 8 caractères dont au moins une majuscule et un chiffre";
+    }
+    if (formData.password !== formData.confirmPassword) {
+      errors.confirmPassword = "Les mots de passe ne correspondent pas";
+    }
+    setFormErrors(errors);
 
-  // const passwordRef = useRef(null);
-  // const confirmPasswordRef = useRef(null);
+    // Si des erreurs sont détectées, ne pas envoyer le formulaire
+    if (Object.keys(errors).length > 0) {
+      return;}
 
-  // const handlePasswordChange = (event) => {
-  //   setPassword(event.target.value);
-  // };
+    setFormErrors(errors);
 
-  // const handleConfirmPasswordChange = (event) => {
-  //   setConfirmPassword(event.target.value);
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   if (password === confirmPassword) {
-  //     setPasswordsMatch(true);
-  //   } else {
-  //     setPasswordsMatch(false);
-  //     passwordRef.current.focus();
-  //     confirmPasswordRef.current.value ="";
-  //   }
-  // };
-
+    window.location.assign("/Categories");
+  };
 
   return (
     <>
+
+    <div className="fleche">
       <Link className="back-arrow" to="/">
-        <i class="fa-solid fa-arrow-left"></i>
+        <i className="fa-solid fa-arrow-left"></i>
       </Link>
+    </div>
 
-      <form className="blockInscription" method="post">
+      <form className="formInscription" method="post">
 
-        <label htmlFor="pseudo">Pseudo</label>
+        <label htmlFor="pseudo" className="pseudo">Pseudo</label>
         <input 
           type="text" 
-          className="form-control" 
+          className='form-control'
           id="pseudo" 
-          name="pseudo" 
+          name="pseudo"
+          value={formData.pseudo}
+          onChange={handleSubmitChange}
           aria-label="pseudo" 
           placeholder="Entrez votre pseudo" 
           required/>
+          {formErrors.pseudo && <span className="msgError">{formErrors.pseudo}</span>}
         
         <label htmlFor="email">E-mail</label>
         <input 
@@ -82,9 +80,12 @@ function PageInscription() {
           className="form-control" 
           id="email" 
           name="email" 
+          value={formData.email}
+          onChange={handleSubmitChange}
           aria-describedby="emailHelp" 
           placeholder="Entrez votre e-mail" 
           required/>
+          {formErrors.email && <span className="msgError">{formErrors.email}</span>}
         
         <label htmlFor="password">Mot de passe</label>
         <input 
@@ -92,30 +93,34 @@ function PageInscription() {
           className="form-control" 
           id="password" 
           name="password" 
+          value={formData.password}
+          onChange={handleSubmitChange}
           aria-label="password" 
           placeholder="Mot de passe" 
           required/>
+          {formErrors.password && <span className="msgError">{formErrors.password}</span>}
         
-        <label htmlFor="passwordc">Confirmation du mot de passe</label>
+        <label htmlFor="confirmPassword">Confirmation du mot de passe</label>
         <input 
           type="password" 
           className="form-control" 
-          id="passwordc" 
-          name="passwordc" 
-          aria-label="confirm-password" 
+          id="confirmPassword" 
+          name="confirmPassword" 
+          value={formData.confirmPassword}
+          onChange={handleSubmitChange}
+          aria-label="confirmPassword" 
           placeholder="Confirme ton mot de passe" 
           required/>
+          {formErrors.confirmPassword && <span className="msgError">{formErrors.confirmPassword}</span>}
         
-        <label>
         <input 
           type="checkbox" 
           name="agree-terms" 
           aria-label="agree-terms" 
           required/>
-          J'accepte les conditions générales d'utilisation 
-        </label>
-
-        <button type="submit" className="btn-inscris">Je m'inscris</button>
+        <label className="checkbox">J'accepte les conditions générales</label>
+        
+        <button type="submit" className="btn-inscris" onClick={handleSubmit}>Je m'inscris</button>
 
       </form>
     </>

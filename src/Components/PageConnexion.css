@@ -1,10 +1,10 @@
-.blockConnexion {
+.formConnexion {
     margin-top: 100px;
     padding: 40px;
     text-align: center;
 }
 
-.blockConnexion label {
+.formConnexion label {
     padding-top: 40px;
     font-family: 'Luckiest Guy', cursive;
     color: white;
@@ -21,5 +21,9 @@
     color: white;
     padding: 0px 40px;
     background-color: blueviolet;
+}
+
+.checkbox {
+    padding-left: 10px;
 }
 

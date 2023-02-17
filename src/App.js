@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Accueil from './Components/Accueil';
 import PageInscription from './Components/PageInscription';
 import PageConnexion from './Components/PageConnexion';
@@ -9,8 +9,7 @@ import ModifProfil from './Components/ModifProfil';
 
 function App() {
   return (
-    <Router>
-
+    
       <Routes>
         <Route exact path="/" element={<Accueil/>} />
         <Route exact path="/PageInscription" element={<PageInscription/>} />
@@ -18,8 +17,7 @@ function App() {
         <Route exact path="/Categories" element={<Categories/>} />
         <Route exact path="/ModifProfil" element={<ModifProfil/>} />
       </Routes>
-
-    </Router>
+      
   );
 }
 

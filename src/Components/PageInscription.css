@@ -1,17 +1,11 @@
-.back-arrow {
-    color: white;
-    font-size: 30px;
-    padding: 20px;
-}
-
-.blockInscription {
+.formInscription {
     margin-top: 20px;
     padding: 20px;
     text-align: center;
 }
 
-.blockInscription label {
-    padding-top: 40px;
+.formInscription label {
+    padding-top: 60px;
     font-family: 'Luckiest Guy', cursive;
     color: white;
 }
@@ -29,3 +23,15 @@
     background-color: blueviolet;
 }
 
+.msgError {
+   display: block;
+   position: fixed;
+}
+
+.pseudo {
+    padding-top: 0px!important;
+}
+
+.fleche {
+    display: flex;
+}

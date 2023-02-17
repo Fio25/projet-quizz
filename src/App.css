@@ -4,3 +4,9 @@ body {
     background: linear-gradient(blueviolet, red);
     height: 100vh;
 }
+
+.back-arrow {
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+}

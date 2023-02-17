@@ -1,10 +1,20 @@
 import React from 'react'
 import './ModifProfil.css'
+import {Link} from 'react-router-dom'
 
 function ModifProfil() {
   return (
-    <>
-    <form className="blockModif">
+  <>
+
+<div className="fleche">
+
+<Link className="back-arrow" to="/Categories">
+  <i className="fa-solid fa-arrow-left"></i>
+</Link>
+
+</div>
+      
+    <form className="formModif">
 
       <label htmlFor="pseudo">Modifier mon Pseudo</label>
       <input 
@@ -40,31 +50,31 @@ function ModifProfil() {
 
     </form>
 
-  <div className="blockHistorique">
-    <h4>Votre historique :</h4>
+    <div className="blockHistorique">
+      <h4>Mon historique :</h4>
 
-    <div className="score">
-      <p>Catégorie : Géographie</p>
-      <p>Score : 20</p>
-    </div>
+      <div className="score">
+        <p>Catégorie : Géographie</p>
+        <p>Score : 20</p>
+      </div>
 
-    <div className="score">
-      <p>Catégorie : Sciences</p>
-      <p>Score : 15</p>
-    </div>
+      <div className="score">
+        <p>Catégorie : Sciences</p>
+        <p>Score : 15</p>
+      </div>
 
-    <div className="score">
-     <p>Catégories : Français</p>
-     <p>Score : 9</p>
-    </div>
+      <div className="score">
+      <p>Catégories : Français</p>
+      <p>Score : 9</p>
+      </div>
 
-    <div className="score">
-      <p>Catégories : Sport</p> 
-      <p>Score : 13</p>
+      <div className="score">
+        <p>Catégories : Sport</p> 
+        <p>Score : 13</p>
+      </div>
     </div>
-  </div>
     
-    </>
+  </>
 
     
   )

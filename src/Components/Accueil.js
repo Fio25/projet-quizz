@@ -1,17 +1,17 @@
 import './Accueil.css'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import PageInscription from './PageInscription'
-import PageConnexion from './PageConnexion'
-import Categories from './Categories'
+import './PageInscription'
+import './PageConnexion'
+import './Categories'
 
 function Accueil() {
   return (
-    <div>
+    <div className="block-accueil">
       
       <h1>STUDY QUIZZ</h1>
 
-      <div className="blockBtn">
+      <div className="block-btnAccueil">
         <Link className="btnAccueil" to="./PageInscription">Inscription</Link>
         <Link className="btnAccueil" to="./PageConnexion">Connexion</Link>
         <Link className="btnAccueil" to="./Categories">Jouer en tant qu'invité</Link>

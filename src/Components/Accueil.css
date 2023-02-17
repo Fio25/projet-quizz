@@ -1,3 +1,8 @@
+.block-accueil{
+    height: 100vh;
+    position: fixed;
+}
+
 h1 {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -10,7 +15,7 @@ h1 {
     letter-spacing: 4px;
 }
 
-.blockBtn {
+.block-btnAccueil {
     display: flex;
     flex-direction: column;
     align-items: center;
