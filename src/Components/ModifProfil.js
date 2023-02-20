@@ -4,15 +4,14 @@ import {Link} from 'react-router-dom'
 
 function ModifProfil() {
   return (
-  <>
+<>
+    <div className="fleche">
 
-<div className="fleche">
+    <Link className="back-arrow" to="/Categories">
+      <i className="fa-solid fa-arrow-left"></i>
+    </Link>
 
-<Link className="back-arrow" to="/Categories">
-  <i className="fa-solid fa-arrow-left"></i>
-</Link>
-
-</div>
+    </div>
       
     <form className="formModif">
 

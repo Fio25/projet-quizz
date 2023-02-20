@@ -6,6 +6,9 @@ import PageInscription from './Components/PageInscription';
 import PageConnexion from './Components/PageConnexion';
 import Categories from './Components/Categories';
 import ModifProfil from './Components/ModifProfil';
+import Quizz from './Components/Quizz';
+
+
 
 function App() {
   return (
@@ -16,6 +19,7 @@ function App() {
         <Route exact path="/PageConnexion" element={<PageConnexion/>} />
         <Route exact path="/Categories" element={<Categories/>} />
         <Route exact path="/ModifProfil" element={<ModifProfil/>} />
+        <Route exact path="/Quizz/:categ" element={<Quizz/>} />
       </Routes>
       
   );

@@ -24,7 +24,7 @@ function PageConnexion() {
 
     const errors = {};
     if (!emailRegex.test(formData.email) || !passwordRegex.test(formData.password)) {
-      errors.password="email ou mdp incorrecte"
+      errors.password="e-mail ou mot de passe incorrect"
     }
     setFormErrors(errors);
 
