@@ -30,3 +30,11 @@
     margin-bottom: 60px;
     background-color: transparent;
 }
+
+.chargement {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 250px;
+}
