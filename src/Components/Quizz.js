@@ -5,13 +5,12 @@ import Reponse from './Reponse'
 export default function Quiz() {
 
     const {categ} = useParams();
-    const idCateg = parseInt(categ)
+    // const idCateg = parseInt(categ)
     const categories = ["Géographie", "Français", "Sciences", "Sport"]
     const url = "http://127.0.0.1:8000/api/questions";
     const [questionsData, setQuestionsData] = useState({})
     const category = categories[categ - 1] || '';
   
-    // const [quizzData, setQuizzData] = useState({id:1, id: 2, id:3, id:4})
   
   //Page de chargement le temps d'attendre l'API
   const [isLoading, setIsLoading] = useState(true);
@@ -20,12 +19,10 @@ export default function Quiz() {
       fetch(url)
       .then((response) => response.json())
       .then(questions => {
-        // console.log(questions);
         var filteredData = questions.filter(item => item.categorie === category); 
         var randomData = filteredData.sort((a, b) => 0.5 - Math.random());  
         console.log(randomData);
         setQuestionsData(randomData)
-          // setQuizzData(data)
           setIsLoading(false);
       });
     }, []);

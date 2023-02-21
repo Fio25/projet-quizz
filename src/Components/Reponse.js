@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './Reponse.css'
 import {v4 as uuidv4} from 'uuid'
 
 export default function Reponse({datas}) {
@@ -47,7 +48,7 @@ export default function Reponse({datas}) {
       )
     }
 
-    
+
     function returnEnd() {
       return (
         <div>
