@@ -11,6 +11,7 @@ export default function Quiz() {
     const [questionsData, setQuestionsData] = useState({})
     const category = categories[categ - 1] || '';
   
+    
   
   //Page de chargement le temps d'attendre l'API
   const [isLoading, setIsLoading] = useState(true);
