@@ -43,11 +43,11 @@ function Categories() {
         </Link>
       </div>
 
-      <ul>
+      <div>
         {questionsData.map(question => (
-          <li key={question.id}>{question.question}</li>
+          <p key={question.id}>{question.question}</p>
         ))}
-      </ul>
+      </div>
 
       <div className="blockCategories">
 
