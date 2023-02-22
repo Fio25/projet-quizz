@@ -3,6 +3,7 @@ import "./Reponse.css";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Reponse({ datas }) {
+
   const [sortedResponse, setSortedResponse] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -31,21 +32,28 @@ export default function Reponse({ datas }) {
   //TIMER
   const [timer, setTimer] = useState(20);
   const [timerId, setTimerId] = useState(null);
+  const [stopTimer, setStopTimer] = useState(false);
+
   useEffect(() => {
+    if (!stopTimer) {    
     if (timer > 0) {
       setTimerId(setTimeout(() => setTimer((prev) => prev - 1), 1000));
     }
     if (timer === 0) {
       clearTimeout(timerId);
+      wrongAnswer()
     }
-    return () => clearInterval(timerId);
-  }, [timer]);
 
+    return () => clearInterval(timerId);
+  } }, [timer]);
+
+  //MAUVAISE REPONSE
   function wrongAnswer() {
     setCurrentQuestion(currentQuestion + 1);
     console.log("t'es nul");
   }
 
+  //BONNE REPONSE
   function goodAnswer() {
     setScore(score + 1);
     setCurrentQuestion(currentQuestion + 1);
@@ -58,11 +66,9 @@ export default function Reponse({ datas }) {
 
         <p className="timer"><i className="fa-regular fa-clock"></i> {timer} secondes</p>
 
-        <div className="question-block">
-
-          <div className="currentQuest">
-            <p className="currentQuestionText">{datas[currentQuestion].question}</p>
-          </div>
+        <div className="currentQuest">
+          <p className="currentQuestionText">{datas[currentQuestion].question}</p>
+        </div>
 
           {sortedResponse.map((row) => (
             <button className="btns-question" key={uuidv4()} onClick={row === datas[currentQuestion].reponse1 ? goodAnswer : wrongAnswer}>
@@ -70,16 +76,17 @@ export default function Reponse({ datas }) {
             </button>
           ))}
 
-        </div>
-        
       </div>
     );
   }
 
   function returnEnd() {
+
+    if (!stopTimer) setStopTimer(true)
+    
     return (
       
-        <p className="score">Score : {score}/10</p>
+        <p className="scoreFinal">Score : {score}/10</p>
       
     );
   }

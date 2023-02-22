@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import './PageInscription.css'
-import {Link} from 'react-router-dom'
+import React, { useState } from 'react';
+import './PageInscription.css';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 function PageInscription() {
 
@@ -47,7 +48,17 @@ function PageInscription() {
 
     setFormErrors(errors);
 
-    window.location.assign("/Categories");
+    axios.post("http://localhost:8000/api/users", {
+      name : formData.pseudo,
+      email: formData.email,
+      password : formData.password
+    })
+    .then(response => {
+      window.location.assign("/Categories");
+    })
+    
+
+    
   };
 
   return (
@@ -65,6 +76,7 @@ function PageInscription() {
         <input 
           type="text" 
           className='form-control'
+    
           id="pseudo" 
           name="pseudo"
           value={formData.pseudo}
@@ -112,13 +124,6 @@ function PageInscription() {
           placeholder="Confirme ton mot de passe" 
           required/>
           {formErrors.confirmPassword && <span className="msgError">{formErrors.confirmPassword}</span>}
-        
-        <input 
-          type="checkbox" 
-          name="agree-terms" 
-          aria-label="agree-terms" 
-          required/>
-        <label className="checkbox">J'accepte les conditions générales</label>
         
         <button type="submit" className="btn-inscris" onClick={handleSubmit}>Je m'inscris</button>
 
