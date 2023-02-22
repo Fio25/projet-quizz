@@ -16,6 +16,7 @@ function Categories() {
       </div>
 
 
+      <h2 className="categ-title">Catégories</h2>
 
       <div className="blockCategories">
         <Link className="btn-categories" to="/Quizz/1">Géographie</Link>

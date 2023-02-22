@@ -11,11 +11,6 @@ export default function Quizz() {
     const category = categories[categ - 1] || '';
 
     //METHODE FETCH
-  
-    
-  
-  //Page de chargement le temps d'attendre l'API
-  const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
       fetch(url)

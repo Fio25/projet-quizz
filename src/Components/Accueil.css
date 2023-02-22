@@ -37,3 +37,11 @@ h1 {
     margin: 30px;
 }
 
+@media screen and (min-width: 539px) and (min-height: 406px) {
+    .block-accueil {
+        flex-direction: column;
+        display: flex;
+        margin-left: 700px;
+        margin-top: 70px;
+    }
+}

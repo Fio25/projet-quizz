@@ -35,3 +35,22 @@
 .fleche {
     display: flex;
 }
+
+@media screen and (min-width: 539px) and (min-height: 406px) {
+    .formInscription {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formInscription input {
+        display: flex;
+        margin: auto;
+        width: 500px;
+    }
+
+    .btn-inscris {
+        margin: auto;
+        width: 500px;
+        margin-top: 60px;
+    }
+}

@@ -9,6 +9,16 @@
     padding: 20px;
 }
 
+.categ-title {
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    width: 260px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 50px;
+}
+
 .blockCategories {
     display: flex;
     flex-direction: column;
@@ -32,3 +42,19 @@
     background-color: transparent;
 }
 
+@media screen and (min-width: 539px) and (min-height: 406px) {
+    .btn-categories {
+        width: 500px;
+        font-size: xx-large;
+    }
+
+    .categ-title {
+        font-family: 'Luckiest Guy', cursive;
+        color: white;
+        width: 260px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        font-size: 100px;
+    }
+}

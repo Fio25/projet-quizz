@@ -62,7 +62,7 @@ export default function Reponse({ datas }) {
 
   function returnBasic() {
     return (
-      <div>
+      <div className="question-loca">
 
         <p className="timer"><i className="fa-regular fa-clock"></i> {timer} secondes</p>
 
