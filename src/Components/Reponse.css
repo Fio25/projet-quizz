@@ -62,7 +62,7 @@
 
 @media screen and (min-width: 539px) and (min-height: 406px) {
     .question-loca {
-        margin-left: auto;
-        margin-right: auto;
+        width: 500px;
+        margin: auto;
     }
 }
