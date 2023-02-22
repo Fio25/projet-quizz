@@ -1,6 +1,6 @@
 .currentQuest {
     font-family: 'Luckiest Guy', cursive;
-    font-size: 25px;
+    font-size: 23px;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     margin-left: 35px;
-    margin-top: 75px;
+    margin-top: 20px;
 }
 
 .currentQuestionText {
@@ -21,7 +21,7 @@
 
 .btns-question {
     font-family: 'Luckiest Guy', cursive;
-    font-size: 25px;
+    font-size: 23px;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -35,5 +35,19 @@
     margin-left: 35px;
     margin-top: 60px;
     background-color: rgba(247, 5, 5, 0.5)
+}
 
+.timer {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: 25px;
+}
+
+.score {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
 }

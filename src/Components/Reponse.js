@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 export default function Reponse({ datas }) {
   const [sortedResponse, setSortedResponse] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     const rdmresult = [
@@ -24,7 +25,21 @@ export default function Reponse({ datas }) {
       .concat(datas[currentQuestion].reponse1)
       .sort(() => Math.random() - 0.5);
     setSortedResponse(newSortResult);
+    setTimer(20);
   }, [currentQuestion, datas]);
+
+  //TIMER
+  const [timer, setTimer] = useState(20);
+  const [timerId, setTimerId] = useState(null);
+  useEffect(() => {
+    if (timer > 0) {
+      setTimerId(setTimeout(() => setTimer((prev) => prev - 1), 1000));
+    }
+    if (timer === 0) {
+      clearTimeout(timerId);
+    }
+    return () => clearInterval(timerId);
+  }, [timer]);
 
   function wrongAnswer() {
     setCurrentQuestion(currentQuestion + 1);
@@ -32,46 +47,42 @@ export default function Reponse({ datas }) {
   }
 
   function goodAnswer() {
+    setScore(score + 1);
     setCurrentQuestion(currentQuestion + 1);
     console.log("t'es trop fort");
   }
 
   function returnBasic() {
     return (
-      <>
+      <div>
+
+        <p className="timer"><i className="fa-regular fa-clock"></i> {timer} secondes</p>
+
         <div className="question-block">
+
           <div className="currentQuest">
-            <p className="currentQuestionText">
-              {datas[currentQuestion].question}
-            </p>
+            <p className="currentQuestionText">{datas[currentQuestion].question}</p>
           </div>
 
-          <div>
-            {sortedResponse.map((row) => (
-              <button
-                className="btns-question"
-                key={uuidv4()}
-                onClick={
-                  row === datas[currentQuestion].reponse1
-                    ? goodAnswer
-                    : wrongAnswer
-                }
-              >
-                {row}
-              </button>
-            ))}
-          </div>
+          {sortedResponse.map((row) => (
+            <button className="btns-question" key={uuidv4()} onClick={row === datas[currentQuestion].reponse1 ? goodAnswer : wrongAnswer}>
+              {row}
+            </button>
+          ))}
+
         </div>
-      </>
+        
+      </div>
     );
   }
 
   function returnEnd() {
     return (
-      <div>
-        <p>gg t'as fini</p>
-      </div>
+      
+        <p className="score">Score : {score}/10</p>
+      
     );
   }
+
   return currentQuestion < 10 ? returnBasic() : returnEnd();
 }
