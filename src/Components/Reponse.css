@@ -1,0 +1,53 @@
+.currentQuest {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 23px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 320px;
+    border: solid 3px blueviolet;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+
+.currentQuestionText {
+    margin-top: 15px;
+}
+
+.btns-question {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 23px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 320px;
+    border: solid 3px blueviolet;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-left: 35px;
+    margin-top: 60px;
+    background-color: rgba(247, 5, 5, 0.5)
+}
+
+.timer {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: 25px;
+}
+
+.score {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+}
