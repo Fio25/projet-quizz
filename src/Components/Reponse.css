@@ -1,4 +1,11 @@
-.currentQuest {
+.chargement {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 250px;
+
+}.currentQuest {
     font-family: 'Luckiest Guy', cursive;
     font-size: 23px;
     text-align: center;
@@ -45,9 +52,10 @@
     margin-top: 25px;
 }
 
-.score {
-    color: white;
-    font-size: 20px;
-    text-align: center;
+.scoreFinal {
     font-family: 'Luckiest Guy', cursive;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 250px;
 }
