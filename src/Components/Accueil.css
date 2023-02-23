@@ -41,7 +41,13 @@ h1 {
     .block-accueil {
         flex-direction: column;
         display: flex;
-        margin-left: 700px;
-        margin-top: 70px;
+        width: 1890px;
+        margin: auto;
+        margin-top: 50px;
+
+    }
+
+    h1 {
+        font-size: 130px;
     }
 }

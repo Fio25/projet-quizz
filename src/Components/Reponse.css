@@ -27,6 +27,7 @@
 }
 
 .btns-question {
+    cursor: pointer;
     font-family: 'Luckiest Guy', cursive;
     font-size: 23px;
     text-align: center;
@@ -57,12 +58,56 @@
     font-size: 30px;
     color: white;
     text-align: center;
-    margin-top: 250px;
+    /* margin-top: 250px; */
+}
+
+.end-animation{
+    width: 400px;
+}
+
+.cassou-shiba{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.btn-replay{
+    width: 300px!important;
+    margin-top: 10px;
+    display: block;
+    margin: auto;
 }
 
 @media screen and (min-width: 539px) and (min-height: 406px) {
     .question-loca {
+        width: 800px;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .currentQuest{
+        width: 800px;
+        margin-left: 0;
+    }
+
+    .btns-question {
+        width: 800px;
+        margin-left: 0;
+        font-size: 30px;
+    } 
+
+    .currentQuestionText{
+        font-size: 40px;
+    }
+
+    .timer {
+        font-size: x-large;
+    }
+    .end-animation{
         width: 500px;
+        display: block;
+        margin: auto;
+    }
+    .btn-replay{
+        display: block;
         margin: auto;
     }
 }

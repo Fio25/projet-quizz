@@ -36,10 +36,22 @@
     display: flex;
 }
 
+.btn-replay{
+    width: 400px!important;
+    display: block;
+    margin: auto;
+}
+
+.container-btn{
+    display: block;
+    margin: auto;
+}
+
 @media screen and (min-width: 539px) and (min-height: 406px) {
     .formInscription {
         display: flex;
         flex-direction: column;
+        margin-top: 70px;
     }
 
     .formInscription input {

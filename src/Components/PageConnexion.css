@@ -31,12 +31,17 @@
     .formConnexion {
         display: flex;
         flex-direction: column;
+        margin-top: 110px;
     }
 
     .formConnexion input {
         display: flex;
-        justify-content: center;
+        margin: auto;
         width: 500px;
-        margin-left: 670px;
+        margin-bottom: 10px;
+    }
+
+    .btn-connexion {
+        justify-content: center;
     }
 }
