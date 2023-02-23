@@ -10,3 +10,18 @@ body {
     font-size: 30px;
     padding: 20px;
 }
+
+.fleche {
+    display: flex;
+}
+
+button{
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+    transform: scale(1.01);
+    transition-duration: 0.2s;
+}

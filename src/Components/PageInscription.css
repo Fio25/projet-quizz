@@ -25,7 +25,7 @@
 
 .msgError {
    display: block;
-   position: fixed;
+   /* position: fixed; */
 }
 
 .pseudo {
@@ -62,7 +62,8 @@
 
     .btn-inscris {
         margin: auto;
-        width: 500px;
+        width: 200px;
         margin-top: 60px;
+        padding: 10px;
     }
 }

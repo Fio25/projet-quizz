@@ -19,11 +19,11 @@ function PageInscription() {
     const [formErrors, setFormErrors] = useState({})
 
     const handleSubmitChange = (event) => {
-    const {name, value} = event.target;
-      setFormData({...formData, [name]: value})
+      const {name, value} = event.target;
+        setFormData({...formData, [name]: value})
     }
 
-    //Soumission de l'entiereté du form
+    //Soumission de l'entiereté du formulaire
     const handleSubmit = (e) => {
       e.preventDefault();
       
@@ -45,30 +45,27 @@ function PageInscription() {
     // Si des erreurs sont détectées, ne pas envoyer le formulaire
     if (Object.keys(errors).length > 0) {
       return;}
-
     setFormErrors(errors);
-
+    
+    //Lier les informations du form à la base de donnée
     axios.post("http://localhost:8000/api/users", {
       name : formData.pseudo,
       email: formData.email,
       password : formData.password
     })
+    //Redirection sur la page connexion une fois inscrit
     .then(response => {
-      window.location.assign("/Categories");
+      window.location.assign("/PageConnexion");
     })
-    
-
-    
   };
 
   return (
     <>
-
-    <div className="fleche">
-      <Link className="back-arrow" to="/">
-        <i className="fa-solid fa-arrow-left"></i>
-      </Link>
-    </div>
+      <div className="fleche">
+        <Link className="back-arrow" to="/">
+          <i className="fa-solid fa-arrow-left"></i>
+        </Link>
+      </div>
 
       <form className="formInscription" method="post">
 
@@ -132,4 +129,4 @@ function PageInscription() {
   )
 }
 
-export default PageInscription
+export default PageInscription;

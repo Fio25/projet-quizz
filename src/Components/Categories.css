@@ -1,14 +1,3 @@
-.icons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.icon-user {
-    color: white;
-    font-size: 30px;
-    padding: 20px;
-}
-
 .categ-title {
     font-family: 'Luckiest Guy', cursive;
     color: white;

@@ -1,5 +1,5 @@
-import './App.css';
 import React from 'react';
+import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Accueil from './Components/Accueil';
 import PageInscription from './Components/PageInscription';
@@ -7,8 +7,6 @@ import PageConnexion from './Components/PageConnexion';
 import Categories from './Components/Categories';
 import ModifProfil from './Components/ModifProfil';
 import Quizz from './Components/Quizz';
-
-
 
 function App() {
   return (

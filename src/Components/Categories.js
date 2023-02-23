@@ -5,13 +5,9 @@ import { Link } from "react-router-dom";
 function Categories() {
   return (
     <>
-      <div className="icons">
+      <div className="fleche">
         <Link className="back-arrow" to="/">
           <i className="fa-solid fa-arrow-left"></i>
-        </Link>
-
-        <Link className="icon-user" to="/ModifProfil">
-          <i className="fa-solid fa-user"></i>
         </Link>
       </div>
 
