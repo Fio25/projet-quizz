@@ -37,3 +37,19 @@ h1 {
     margin: 30px;
 }
 
+.btn-deconnexion {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 220px;
+    border: solid 3px blueviolet;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    background-color: transparent;
+}

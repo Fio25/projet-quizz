@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Reponse.css";
 import { v4 as uuidv4 } from "uuid";
+import {Link} from 'react-router-dom';
 
 export default function Reponse({ datas }) {
 
@@ -62,8 +63,13 @@ export default function Reponse({ datas }) {
 
   function returnBasic() {
     return (
+      
       <div>
 
+        <Link className="back-arrow" to="/Categories">
+          <i className="fa-solid fa-arrow-left"></i>
+        </Link>
+        
         <p className="timer"><i className="fa-regular fa-clock"></i> {timer} secondes</p>
 
         <div className="currentQuest">
@@ -71,7 +77,7 @@ export default function Reponse({ datas }) {
         </div>
 
           {sortedResponse.map((row) => (
-            <button className="btns-question" key={uuidv4()} onClick={row === datas[currentQuestion].reponse1 ? goodAnswer : wrongAnswer}>
+            <button className="btn-question" key={uuidv4()} onClick={row === datas[currentQuestion].reponse1 ? goodAnswer : wrongAnswer}>
               {row}
             </button>
           ))}
@@ -84,12 +90,23 @@ export default function Reponse({ datas }) {
 
     if (!stopTimer) setStopTimer(true)
     
-    return (
+  return (
+    <>
+      <div className="fleche">
+        <Link className="back-arrow" to="/">
+          <i className="fa-solid fa-arrow-left"></i>
+        </Link>
+      </div>
+
+      <p className="scoreFinal">Score : {score}/10</p>
       
-        <p className="scoreFinal">Score : {score}/10</p>
+      <Link className="btn-retourCateg" to="/Categories">Catégories</Link>
+        
+      </>
       
     );
   }
 
   return currentQuestion < 10 ? returnBasic() : returnEnd();
 }
+

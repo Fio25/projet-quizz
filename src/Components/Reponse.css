@@ -12,6 +12,7 @@
     text-decoration: none;
     color: white;
     width: 320px;
+    height: 200px;
     border: solid 3px blueviolet;
     border-radius: 20px;
     box-shadow: 0px 0px 30px black;
@@ -23,10 +24,11 @@
 }
 
 .currentQuestionText {
-    margin-top: 15px;
+    padding: 10px;
+    letter-spacing: 0.5px;
 }
 
-.btns-question {
+.btn-question {
     font-family: 'Luckiest Guy', cursive;
     font-size: 23px;
     text-align: center;
@@ -49,13 +51,26 @@
     font-size: 20px;
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .scoreFinal {
     font-family: 'Luckiest Guy', cursive;
-    font-size: 30px;
+    font-size: 40px;
     color: white;
     text-align: center;
-    margin-top: 250px;
+}
+
+.btn-retourCateg {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    width: 230px;
+    border: solid 3px blueviolet;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px white;
+    padding: 10px;
+    display: block;
+    margin: auto;
 }

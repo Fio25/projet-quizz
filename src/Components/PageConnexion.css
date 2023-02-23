@@ -1,5 +1,5 @@
 .formConnexion {
-    margin-top: 80px;
+    margin-top: 50px;
     padding: 40px;
     text-align: center;
 }
@@ -23,7 +23,6 @@
     background-color: blueviolet;
 }
 
-.checkbox {
-    padding-left: 10px;
+.labelCheckbox {
+    padding-left: 15px;
 }
-
